@@ -8,14 +8,14 @@ public class ForNamePetCreator extends Creator {
     private static List<Class<? extends Pet>> types = new ArrayList<>();
     // Types you want randomly created:
     private static String[] typeNames = {
-            "reflection.pets.Mutt",
-            "reflection.pets.Pug",
-            "reflection.pets.EgyptianMau",
-            "reflection.pets.Manx",
-            "reflection.pets.Cymric",
-            "reflection.pets.Rat",
-            "reflection.pets.Mouse",
-            "reflection.pets.Hamster"
+            "org.example.reflection.pests.Mutt",
+            "org.example.reflection.pests.Pug",
+            "org.example.reflection.pests.EgyptianMau",
+            "org.example.reflection.pests.Manx",
+            "org.example.reflection.pests.Cymric",
+            "org.example.reflection.pests.Rat",
+            "org.example.reflection.pests.Mouse",
+            "org.example.reflection.pests.Hamster"
     };
 
     private static void loader() {
