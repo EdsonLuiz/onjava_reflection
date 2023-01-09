@@ -10,6 +10,9 @@ class DynamicProxyHandler implements InvocationHandler {
         this.proxied = proxied;
     }
 
+    /**
+     * invoke() recebe o objeto proxy, caso seja necessário distinguir de onde veio a solicitaão.
+     */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("*** proxy: " + proxy.getClass() + ", method: " + method + ", args: " + args);
@@ -22,6 +25,18 @@ class DynamicProxyHandler implements InvocationHandler {
     }
 }
 
+/**
+ * To create a dynamic proxy:
+ *
+ * 1- call the static method Proxy.newProxyInstance() with this arguments.
+ *  A- class loader
+ *  B- List of interfaces (not classes or abstract classes) you wish the proxy to implement.
+ *  C- Implementation of the interface InvocationHandler
+ *
+ *  O DynamicProxy redirecionará todas as chamadas para o InvocationHandler, portanto,
+ *  o construtor do InvocationHandler geralmente recebe a referência ao objeto real para que possa
+ *  encaminhar as solicitacões assim que executar sua tarefa intermediária.
+ */
 public class SimpleDynamicProxy {
     public static void consumer(Interface iface) {
         iface.doSomething();
