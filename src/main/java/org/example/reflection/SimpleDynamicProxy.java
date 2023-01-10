@@ -12,6 +12,11 @@ class DynamicProxyHandler implements InvocationHandler {
 
     /**
      * invoke() recebe o objeto proxy, caso seja necessário distinguir de onde veio a solicitaão.
+     *
+     * Você executa as operacões que foram interceptadas pelo proxy e depois utiliza
+     * Method.invoke() para enviar a request para o objeto real, passando os argumentos necessários.
+     *
+     * Neste ponto você pode filtrar alguns métodos e deixar outros passar.
      */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
